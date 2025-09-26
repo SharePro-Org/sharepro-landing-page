@@ -1,13 +1,17 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Sharepro - Smart Loyalty and Referrals" },
+    {
+      name: "description", content: "Built to help businesses grow through smart loyalty and referrals." },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <main>
+      <div className="max-w-7xl mx-auto"></div>
+    </main>
+  );
 }
