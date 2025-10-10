@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import "tailwindcss";
+
+body {
+    font-family: "Public Sans", sans-serif;
+}
 
 @theme {
     /* Colors */
@@ -55,4 +61,9 @@
     --font-size-lg: 18px;
     --font-size-xl: 20px;
     --font-size-2xl: 24px;
+}
+
+#cta{
+    background: url('/assets/pattern.svg') no-repeat center;
+    background-color: #A16AD4;
 }
