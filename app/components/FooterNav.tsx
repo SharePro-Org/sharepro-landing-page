@@ -21,12 +21,12 @@ const FooterNav = () => {
                         <Link to="/tutorials" className="text-gray-600 hover:text-gray-900">
                             How It Works
                         </Link>
-                        <a href="#features" className="text-gray-600 hover:text-gray-900">
-                            Features
-                        </a>
-                        <a href="#pricing" className="text-gray-600 hover:text-gray-900">
-                            Pricing
-                        </a>
+                        <Link to="/terms-of-use" className="text-gray-600 hover:text-gray-900">
+                            Terms of Use
+                        </Link>
+                        <Link to="/privacy-policy" className="text-gray-600 hover:text-gray-900">
+                            Privacy Policy
+                        </Link>
                         <Link to="/about" className="text-gray-600 hover:text-gray-900">
                             About
                         </Link>
