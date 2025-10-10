@@ -4,6 +4,8 @@ import { Link } from 'react-router';
 import type { Route } from "./+types/home";
 import SupportRequestModal from '~/components/SupportModal';
 import Accordion from '~/components/Accordion';
+import { useQuery } from "@apollo/client/react";
+import { GET_FAQS_BY_CATEGORY } from '~/apollo/queries';
 
 
 export function meta({ }: Route.MetaArgs) {
@@ -18,9 +20,16 @@ export function meta({ }: Route.MetaArgs) {
 }
 
 const issueTypes = [
-    { value: "login", label: "Login Issue" },
+    { value: "technical", label: "Technical Issue" },
     { value: "billing", label: "Billing Issue" },
-    { value: "bug", label: "Bug Report" },
+    { value: "account", label: "Account Issue" },
+    { value: "campaign", label: "Campaign Issue" },
+    { value: "reward", label: "Reward Issue" },
+    { value: "referral", label: "Referral Issue" },
+    { value: "feature_request", label: "Feature Request" },
+    { value: "bug_report", label: "Bug Report" },
+    { value: "general", label: "General Inquiry" },
+    // { value: "other", label: "Other" },
 ];
 
 
@@ -28,13 +37,17 @@ const issueTypes = [
 const helpSupport = () => {
     const [open, setOpen] = React.useState(false);
     const [searchQuery, setSearchQuery] = React.useState("");
-    const [active, setActive] = React.useState<string | null>(null);
-    const [faqData, setFaqData] = React.useState([]);
+    const [active, setActive] = React.useState<string>('general');
 
-    const handleSubmit = async (data: any) => {
-        console.log("Submitted:", data);
-        await new Promise((res) => setTimeout(res, 1000));
-    };
+    const { data, loading, error } = useQuery<any>(GET_FAQS_BY_CATEGORY, {
+        variables: { category: active },
+    });
+    const faqs = data?.faqsByCategory ?? [];
+
+    const items = faqs.map((faq: { question: any; answer: any; }) => ({
+        title: faq.question,
+        content: faq.answer,
+    }));
 
     const CATEGORY_CHOICES = [
         ['general', 'General'],
@@ -97,7 +110,7 @@ const helpSupport = () => {
                         </div>
                     </div>
                     <div>
-                        <Accordion items={faqData} />
+                        <Accordion items={faqs} />
                     </div>
 
                 </div>
@@ -132,11 +145,7 @@ const helpSupport = () => {
                             solve issues faster.
                         </p>
                         <Link
-                            to={
-                                typeof window !== "undefined" &&
-                                    window.location.pathname.startsWith("/user")
-                                    ? "/user/support/walkthroughs"
-                                    : "/business/support/walkthroughs"
+                            to={"/tutorials"
                             }
                         >
                             <button className="border-b text-sm">Watch Tutorials</button>
@@ -159,7 +168,6 @@ const helpSupport = () => {
                 open={open}
                 onClose={() => setOpen(false)}
                 issueTypes={issueTypes}
-                onSubmit={handleSubmit}
             />
         </main>
     );

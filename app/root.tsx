@@ -11,6 +11,8 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import HeaderNav from "./components/HeaderNav";
 import FooterNav from "./components/FooterNav";
+import { ApolloClient, HttpLink, InMemoryCache, gql } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client/react";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -26,6 +28,11 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const client = new ApolloClient({
+    link: new HttpLink({ uri: "https://api.mysharepro.com/graphql/" }),
+    cache: new InMemoryCache(),
+  });
+
   return (
     <html lang="en">
       <head>
@@ -35,9 +42,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <HeaderNav />
-        {children}
-        <FooterNav />
+        <ApolloProvider client={client}>
+          <HeaderNav />
+          {children}
+          <FooterNav />
+        </ApolloProvider>
         <ScrollRestoration />
         <Scripts />
       </body>

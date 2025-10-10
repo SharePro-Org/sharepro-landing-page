@@ -1,4 +1,6 @@
+import { useMutation } from "@apollo/client/react";
 import React, { useState, useRef } from "react";
+import { CREATE_SUPPORT_REQUEST } from "~/apollo/queries";
 
 interface FormData {
     issueType: string;
@@ -17,14 +19,12 @@ interface SupportRequestModalProps {
     open: boolean;
     onClose: () => void;
     issueTypes: IssueType[];
-    onSubmit: (data: FormData) => Promise<void>;
 }
 
 const SupportRequestModal: React.FC<SupportRequestModalProps> = ({
     open,
     onClose,
     issueTypes,
-    onSubmit,
 }) => {
     const [formData, setFormData] = useState<FormData>({
         issueType: "",
@@ -37,28 +37,34 @@ const SupportRequestModal: React.FC<SupportRequestModalProps> = ({
     const [submitLoading, setSubmitLoading] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
-    const handleInputChange = (key: keyof FormData, value: string | File | null) => {
-        setFormData((prev) => ({ ...prev, [key]: value }));
+    const [submitSupportRequest] = useMutation(CREATE_SUPPORT_REQUEST);
+
+
+    const handleInputChange = (field: string, value: string) => {
+        setFormData((prev) => ({ ...prev, [field]: value }));
     };
 
-    const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        handleInputChange("screenshot", file || null);
-    };
+    // const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     const file = e.target.files?.[0];
+    //     handleInputChange("screenshot", file || null);
+    // };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setSubmitError(null);
         setSubmitLoading(true);
+
         try {
-            await onSubmit(formData);
-            setFormData({
-                issueType: "",
-                subject: "",
-                contactEmail: "",
-                screenshot: null,
-                description: "",
+            console.log("Submitting:", formData);
+            const { data } = await submitSupportRequest({
+                variables: {
+                    issueType: formData.issueType,
+                    subject: formData.subject,
+                    contactEmail: formData.contactEmail,
+                    description: formData.description,
+                },
             });
+
             onClose();
         } catch (err: any) {
             setSubmitError(err);
@@ -155,7 +161,7 @@ const SupportRequestModal: React.FC<SupportRequestModalProps> = ({
                     </div>
 
                     {/* Screenshot Upload */}
-                    <div>
+                    {/* <div>
                         <label
                             htmlFor="screenshot"
                             className="block text-sm font-medium mb-2"
@@ -185,7 +191,7 @@ const SupportRequestModal: React.FC<SupportRequestModalProps> = ({
                                 )}
                             </button>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Description */}
                     <div>
