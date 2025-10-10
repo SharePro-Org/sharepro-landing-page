@@ -32,7 +32,7 @@ export default function Privacy() {
             </section>
 
             {/* Content */}
-            <section className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 px-6 pb-20">
+            <section className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 px-4 pb-20">
                 {/* Sidebar */}
                 <aside className="bg-white p-6 rounded-lg w-full md:w-1/3 h-fit">
                     <ul className="flex flex-col gap-3">

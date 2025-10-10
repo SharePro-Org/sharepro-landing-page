@@ -44,7 +44,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-[#243F99] text-white py-20">
+      <section  className="bg-[#243F99] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-2">How It Works</h2>
           <p className="text-center">Start growing through the power of loyalty and referrals in just a few simple steps.</p>
@@ -88,7 +88,7 @@ export default function Home() {
       </section>
 
       {/* Key Features */}
-      <section className="py-20 bg-white">
+      <section id="features" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Key Features</h2>
           <p className="text-[#030229B2] mb-12">
@@ -170,7 +170,7 @@ export default function Home() {
       </section>
 
       {/* Pricing */}
-      <section className="py-20 bg-white">
+      <section id="pricing" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto text-center px-4">
           <h2 className="text-3xl font-bold mb-4">Pricing Preview</h2>
           <p className="text-[#030229B2] mb-12">
