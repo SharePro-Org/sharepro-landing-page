@@ -1,5 +1,7 @@
 import CTA from "~/components/CTA";
 import type { Route } from "./+types/home";
+import { GET_PLANS } from "~/apollo/queries";
+import { useQuery } from "@apollo/client/react";
 
 export function meta({ }: Route.MetaArgs) {
   return [
@@ -13,6 +15,8 @@ export function meta({ }: Route.MetaArgs) {
 }
 
 export default function Home() {
+  const { data: plansData, loading: plansLoading, error: plansError } = useQuery<{ plans: any[] }>(GET_PLANS);
+
   return (
     <main className="bg-[#F3F6F8] text-[#030229]">
       {/* Hero Section */}
@@ -44,7 +48,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section  className="bg-[#243F99] text-white py-20">
+      <section className="bg-[#243F99] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-2">How It Works</h2>
           <p className="text-center">Start growing through the power of loyalty and referrals in just a few simple steps.</p>
@@ -171,64 +175,85 @@ export default function Home() {
 
       {/* Pricing */}
       <section id="pricing" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto text-center px-4">
-          <h2 className="text-3xl font-bold mb-4">Pricing Preview</h2>
-          <p className="text-[#030229B2] mb-12">
-            Simple pricing that scales with you.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-8 text-left">
-            {[
-              {
-                name: "Growth",
-                price: "₦7,500 /month",
-                features: [
-                  "10 Campaigns",
-                  "Basic Analytics",
-                  "Limited Reward Budget",
-                ],
-              },
-              {
-                name: "Pro",
-                price: "₦18,000 /month",
-                features: [
-                  "Unlimited Campaigns",
-                  "Full Analytics",
-                  "N500k Reward Cap",
-                ],
-              },
-              {
-                name: "Enterprise",
-                price: "Custom Pricing",
-                features: [
-                  "Unlimited Campaigns",
-                  "Dedicated Support",
-                  "Custom Integrations",
-                ],
-              },
-            ].map((plan, i) => (
-              <div
-                key={i}
-                className="p-8 rounded-xl border border-gray-200 hover:shadow-lg transition bg-[#F9FBFC]"
-              >
-                <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-2xl font-semibold text-[#233E97] mb-4">
-                  {plan.price}
-                </p>
-                <ul className="mb-6 space-y-2 text-sm text-[#030229B2]">
-                  {plan.features.map((f, j) => (
-                    <li key={j}>✔️ {f}</li>
-                  ))}
-                </ul>
-                <button className="bg-[#233E97] w-full py-3 text-white rounded-md">
-                  Get Started
-                </button>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center ">
+            <h2 className="text-3xl font-bold mb-4">Pricing Preview</h2>
+            <p className="text-[#030229B2] mb-12">
+              Simple pricing that scales with you.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {plansLoading ? (
+              <div className="col-span-3 flex justify-center items-center py-8">
+                <span className="text-gray-500">Loading plans...</span>
               </div>
-            ))}
+            ) : plansError ? (
+              <div className="col-span-3 flex justify-center items-center py-8">
+                <span className="text-red-500">Error loading plans</span>
+              </div>
+            ) : plansData?.plans?.length ? (
+              plansData.plans.map((plan) => (
+                <div key={plan.id} className="bg-white rounded-md p-4 border border-[#E5E5EA]">
+                  <div className="border-b border-b-[#E5E5EA] pb-3">
+                    <h2 className="text-primary mb-2 flex items-center gap-2">
+                      {plan.name}
+                      {plan.isPopular && (
+                        <span className="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Popular</span>
+                      )}
+                    </h2>
+                    <div className="flex gap-2">
+                      <span className="font-semibold text-lg">
+                        {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(plan.price)}
+                      </span>
+                      <span className="my-auto">/{plan.billablePeriods}</span>
+                    </div>
+                  </div>
+                  <ul className="text-sm space-y-1 my-3 min-h-[120px]">
+                    {plan.description && (
+                      <li className="flex items-center gap-2 my-1">
+                        <span className="text-black">✓</span>
+                        {plan.description}
+                      </li>
+                    )}
+                    <li className="flex items-center gap-2 my-1">
+                      <span className="text-black">✓</span>
+                      Max Campaigns: {plan.maxCampaigns}
+                    </li>
+                    <li className="flex items-center gap-2 my-1">
+                      <span className="text-black">✓</span>
+                      Max Referrals: {plan.maxReferrals}
+                    </li>
+                    <li className="flex items-center gap-2 my-1">
+                      <span className="text-black">✓</span>
+                      Max Team Members: {plan.maxTeamMembers}
+                    </li>
+                    <li className="flex items-center gap-2 my-1">
+                      <span className="text-black">✓</span>
+                      Analytics: {plan.analyticsEnabled ? 'Yes' : 'No'}
+                    </li>
+                    <li className="flex items-center gap-2 my-1">
+                      <span className="text-black">✓</span>
+                      Custom Branding: {plan.customBranding ? 'Yes' : 'No'}
+                    </li>
+                    <li className="flex items-center gap-2 my-1">
+                      <span className="text-black">✓</span>
+                      Priority Support: {plan.prioritySupport ? 'Yes' : 'No'}
+                    </li>
+                  </ul>
+                  <div className="mt-4">
+                    <button className="text-sm w-full rounded-sm bg-[#ECF3FF] text-[#233E97] p-4">Get Started</button>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="col-span-3 flex justify-center items-center py-8">
+                <span className="text-gray-500">No plans available</span>
+              </div>
+            )}
           </div>
         </div>
-      </section>
 
+      </section>
       {/* CTA */}
       <CTA />
     </main>

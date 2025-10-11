@@ -29,3 +29,22 @@ export const CREATE_SUPPORT_REQUEST = gql`
     }
   }
 `;
+
+export const GET_PLANS = gql`
+  query GetPlans {
+    plans(isActive: true) {
+      id
+      name
+      description
+      price
+      billablePeriods
+      maxCampaigns
+      maxReferrals
+      maxTeamMembers
+      analyticsEnabled
+      customBranding
+      prioritySupport
+      isPopular
+    }
+  }
+`;
