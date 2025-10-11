@@ -2,6 +2,7 @@ import CTA from "~/components/CTA";
 import type { Route } from "./+types/home";
 import { GET_PLANS } from "~/apollo/queries";
 import { useQuery } from "@apollo/client/react";
+import { Link } from "react-router";
 
 export function meta({ }: Route.MetaArgs) {
   return [
@@ -32,12 +33,16 @@ export default function Home() {
             through word-of-mouth and repeat engagement.
           </p>
           <div className="flex justify-center gap-4 mt-8">
-            <button className="bg-[#233E97] w-44 p-4 text-white rounded-md">
-              Get Started
-            </button>
-            <button className="bg-[#A16AD4] w-44 p-4 text-white rounded-md">
-              Log into Dashboard
-            </button>
+            <Link to="https://sharepro-web.netlify.app/auth/sign-up">
+              <button className="bg-[#233E97] w-44 p-4 text-white rounded-md">
+                Get Started
+              </button>
+            </Link>
+            <Link to="https://sharepro-web.netlify.app/auth/sign-in">
+              <button className="bg-[#A16AD4] w-44 p-4 text-white rounded-md">
+                Log into Dashboard
+              </button>
+            </Link>
           </div>
         </div>
         <img
@@ -241,7 +246,9 @@ export default function Home() {
                     </li>
                   </ul>
                   <div className="mt-4">
-                    <button className="text-sm w-full rounded-sm bg-[#ECF3FF] text-[#233E97] p-4">Get Started</button>
+                    <Link to="https://sharepro-web.netlify.app/auth/sign-up">
+                      <button className="text-sm w-full rounded-sm bg-[#ECF3FF] text-[#233E97] p-4">Get Started</button>
+                    </Link>
                   </div>
                 </div>
               ))

@@ -36,12 +36,12 @@ const HeaderNav = () => {
 
                     {/* Auth Buttons (Desktop) */}
                     <div className="hidden md:flex items-center space-x-4">
-                        <Link to="/user/auth/login">
+                        <Link to="https://sharepro-web.netlify.app/auth/sign-in">
                             <button className="text-gray-700 hover:text-gray-900 font-medium">
                                 Login
                             </button>
                         </Link>
-                        <Link to="">
+                        <Link to="https://sharepro-web.netlify.app/auth/sign-up">
                             <button className="bg-primary text-white px-4 py-2 rounded-sm font-medium">
                                 Get Started
                             </button>
@@ -121,12 +121,12 @@ const HeaderNav = () => {
 
                         <hr className="border-gray-200" />
 
-                        <Link to="/user/auth/login" onClick={() => setMenuOpen(false)}>
+                        <Link to="https://sharepro-web.netlify.app/auth/sign-in" onClick={() => setMenuOpen(false)}>
                             <button className="w-full text-left text-gray-700 hover:text-gray-900 font-medium">
                                 Login
                             </button>
                         </Link>
-                        <Link to="" onClick={() => setMenuOpen(false)}>
+                        <Link to="https://sharepro-web.netlify.app/auth/sign-up" onClick={() => setMenuOpen(false)}>
                             <button className="w-full bg-primary text-white px-4 py-2 rounded-sm font-medium">
                                 Get Started
                             </button>
