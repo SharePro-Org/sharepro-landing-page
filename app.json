@@ -1,0 +1,43 @@
+{
+  "name": "sharepro-landing-page",
+  "description": "SharePro Landing Page - Marketing website for SharePro",
+  "repository": "https://github.com/SharePro-Org/sharepro-landing-page",
+  "keywords": ["react", "vite", "landing-page", "marketing"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "environments": {
+    "production": {
+      "NODE_ENV": "production"
+    },
+    "staging": {
+      "NODE_ENV": "production"
+    }
+  },
+  "addons": [],
+  "scripts": {
+    "postdeploy": "echo 'SharePro Landing Page deployed successfully!'"
+  },
+  "env": {
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production"
+    },
+    "PORT": {
+      "description": "Port number for the application",
+      "value": "3000"
+    },
+    "REACT_APP_API_URL": {
+      "description": "API URL for the SharePro backend",
+      "value": "https://api.mysharepro.com/graphql/"
+    }
+  }
+}
