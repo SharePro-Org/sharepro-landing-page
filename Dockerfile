@@ -34,6 +34,18 @@ RUN adduser --system --uid 1001 reactapp
 # Install serve globally for serving static files
 RUN npm install -g serve
 
+# Create a minimal package.json for Dokku compatibility
+RUN echo '{ \
+  "name": "sharepro-landing", \
+  "version": "1.0.0", \
+  "engines": { \
+    "node": ">=20.0.0" \
+  }, \
+  "scripts": { \
+    "start": "serve -s public -l $PORT" \
+  } \
+}' > package.json
+
 # Copy built application
 COPY --from=builder /app/build/client ./public
 
@@ -47,5 +59,5 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-# Start the application using serve
-CMD ["serve", "-s", "public", "-l", "3000"]
+# Start the application using npm start
+CMD ["npm", "start"]
