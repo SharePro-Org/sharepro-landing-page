@@ -31,12 +31,14 @@ ENV NODE_ENV=production
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 reactapp
 
-# Copy built application
-COPY --from=builder /app/build ./build
-COPY --from=builder /app/package.json ./package.json
+# Install serve globally for serving static files
+RUN npm install -g serve
 
-# Install only production dependencies
-RUN npm ci --omit=dev && npm cache clean --force
+# Copy built application
+COPY --from=builder /app/build/client ./public
+
+# Change ownership to reactapp user
+RUN chown -R reactapp:nodejs /app
 
 USER reactapp
 
@@ -45,5 +47,5 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-# Start the application
-CMD ["npm", "start"]
+# Start the application using serve
+CMD ["serve", "-s", "public", "-l", "3000"]
