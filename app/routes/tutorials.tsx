@@ -99,7 +99,7 @@ const tutorials = () => {
                                 <div className="relative aspect-video bg-gray-100">
                                     {video.thumbnailUrl ? (
                                         <img
-                                            src={video.thumbnailUrl}
+                                            src={`https://api.mysharepro.com/media/${video.thumbnailUrl}`}
                                             alt={video.name}
                                             className="w-full h-full object-cover"
                                         />
