@@ -48,3 +48,20 @@ export const GET_PLANS = gql`
     }
   }
 `;
+
+export const WALKTHROUGH_VIDEOS = gql`
+  query walkthroughVideos {
+    walkthroughVideos {
+      category
+      createdAt
+      description
+      fileUrl
+      id
+      name
+      thumbnail
+      thumbnailUrl
+      isActive
+      viewCount
+    }
+  }
+`;

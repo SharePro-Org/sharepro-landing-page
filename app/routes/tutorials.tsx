@@ -1,6 +1,8 @@
 import { Clock, Play, SearchIcon } from 'lucide-react';
 import React from 'react';
 import type { Route } from "./+types/home";
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
+import { WALKTHROUGH_VIDEOS } from '../apollo/queries';
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -20,6 +22,31 @@ const tutorials = () => {
     const [filteredVideos, setVideos] = React.useState<any[]>([]);
     const [videosLoading, setVideosLoading] = React.useState(true);
     const [videosError, setVideosError] = React.useState<string | null>(null);
+
+    React.useEffect(() => {
+        const fetchVideos = async () => {
+            try {
+                setVideosLoading(true);
+                const client = new ApolloClient({
+                    link: new HttpLink({ uri: "https://api.mysharepro.com/graphql/" }),
+                    cache: new InMemoryCache(),
+                });
+
+                const { data } = await client.query({ query: WALKTHROUGH_VIDEOS });
+                const videos = (data as any)?.walkthroughVideos || [];
+                setVideos(videos);
+                setVideosError(null);
+            } catch (error) {
+                console.error("Error fetching videos:", error);
+                setVideosError("Failed to load videos. Please try again later.");
+                setVideos([]);
+            } finally {
+                setVideosLoading(false);
+            }
+        };
+
+        fetchVideos();
+    }, []);
 
 
     const categories = [
