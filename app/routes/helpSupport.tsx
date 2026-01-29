@@ -61,47 +61,46 @@ const helpSupport = () => {
     ] as const;
 
     return (
-        <main>
-            <section className="bg-[#F3F6F8]">
+        <main className="bg-[#0D0B12] text-white min-h-screen">
+            <section className="bg-[#0D0B12]">
                 <div className="text-center py-20 px-4">
-                    <h1 className="text-3xl md:text-4xl font-bold text-[#233E97] mb-2">
+                    <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 font-display">
                         Help and Support
                     </h1>
-                    <p className="text-sm text-[#030229B2] mb-1">
-                        Find answers, reach support, or explore tutorials to get the most out
-                        of your experience.                    </p>
+                    <p className="text-sm text-gray-400 mb-1">
+                        Find answers, reach support, or explore tutorials to get the most out of your experience.
+                    </p>
                     <div className="flex justify-center my-3 gap-3">
                         <div className="relative md:mt-0 mt-2">
                             <input
                                 type="text"
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="bg-[#F9FAFB] md:w-80 w-full border border-[#E4E7EC] p-3 rounded-sm pl-8 text-sm"
+                                className="bg-[#19171E] md:w-80 w-full border border-[#302C3F] p-3 rounded-md pl-8 text-sm text-white placeholder-gray-500"
                                 placeholder="Search By Keyword or topic"
                             />
-
                             <SearchIcon
                                 size={16}
                                 className="absolute top-4 left-3 text-gray-500"
                             />
                         </div>
-                        <button className="bg-primary text-white px-4 py-2 rounded-sm">
+                        <button className="bg-[#155DFC] text-white px-4 py-2 rounded-md font-medium hover:bg-[#1a4bd9] transition">
                             Search
                         </button>
                     </div>
                 </div>
             </section>
-            <section className='bg-white p-10'>
-                <div className='max-w-7xl mx-auto md:grid md:grid-cols-2 gap-4'>
+            <section className='max-w-7xl mx-auto rounded-lg bg-[#19171E] p-10 border-b border-[#232136]'>
+                <div className=' md:grid md:grid-cols-2 gap-8'>
                     <div>
-                        <h2 className="text-2xl font-semibold text-[#030229] mb-4">
+                        <h2 className="text-2xl font-semibold text-white mb-4">
                             Frequently Asked Questions
                         </h2>
-                        <div>
+                        <div className="flex flex-wrap gap-2">
                             {CATEGORY_CHOICES.map(([value, label]) => (
                                 <button
                                     key={value}
-                                    className={`bg-[#F3F6F8] text-sm text-[#030229B2] px-4 py-4 rounded-md mr-2 mb-2 ${active === value ? 'font-semibold text-[#030229] border border-[#030229]' : ''}`}
+                                    className={`px-4 py-2 rounded-md text-sm font-medium transition border border-transparent ${active === value ? 'bg-white text-[#0D0B12] font-semibold' : 'bg-transparent border border-[#3D3D3D] text-white'}`}
                                     onClick={() => setActive(value)}
                                 >
                                     {label}
@@ -110,57 +109,53 @@ const helpSupport = () => {
                         </div>
                     </div>
                     <div>
-                        <Accordion items={faqs} />
+                        <div className="rounded-xl p-6 mt-4 md:mt-0">
+                            <Accordion items={faqs} />
+                        </div>
                     </div>
-
                 </div>
             </section>
-            <section className="bg-[#F3F6F8] py-10">
-                <div className="max-w-7xl mx-auto my-4 md:grid md:grid-cols-2 gap-4">
-                    <div className="bg-white rounded-md my-2 p-6">
-                        <div className="bg-[#ECF3FF] rounded-sm p-3 w-12 h-12 flex items-center justify-center mb-3">
-                            <MessageCircleQuestion className="text-primary" />
-                        </div>
-                        <p className="font-semibold">Support Request</p>
-                        <p className="my-2 text-sm">
+            <section className="bg-[#0D0B12] py-10">
+                <div className="max-w-7xl mx-auto my-4 grid md:grid-cols-2 gap-8">
+                    <div className="bg-[#19171E] rounded-2xl p-8 flex flex-col justify-between">
+                        <img src="/assets/002.png" className='w-10' alt="" />
+                        <h3 className="text-lg font-semibold text-white mb-2">Support Request</h3>
+                        <p className="text-gray-400 text-sm mb-4">
                             Need to speak with someone? Our support team is here to help.
                         </p>
                         <button
-                            onClick={() => {
-                                setOpen(true);
-                            }}
-                            className="border-b text-sm"
+                            onClick={() => setOpen(true)}
+                            className="text-white underline text-sm font-medium text-left p-0"
                         >
                             Submit a Request
                         </button>
                     </div>
 
-                    <div className="bg-white rounded-md p-6 my-2">
-                        <div className="bg-[#ECF3FF] rounded-sm p-3 w-12 h-12 flex items-center justify-center mb-3">
-                            <ArrowBigDown className="text-primary" />
-                        </div>
-                        <p className="font-semibold">Walkthroughs</p>
-                        <p className="my-2 text-sm">
-                            Step-by-step video guides to help you onboard, explore features, and
-                            solve issues faster.
+                    <div className="bg-[#19171E] rounded-2xl p-8 flex flex-col justify-between">
+                        <img src="/assets/001.png" className='w-10' alt="" />
+
+                        <h3 className="text-lg font-semibold text-white mb-2">Walkthroughs</h3>
+                        <p className="text-gray-400 text-sm mb-4">
+                            Step-by-step video guides to help you onboard, explore features, and solve issues faster.
                         </p>
-                        <Link
-                            to={"/tutorials"
-                            }
-                        >
-                            <button className="border-b text-sm">Watch Tutorials</button>
+                        <Link to="/tutorials">
+                            <button className="text-white underline text-sm font-medium text-left p-0">
+                                Watch Tutorials
+                            </button>
                         </Link>
                     </div>
 
-                    <div className='col-span-2 bg-white my-2 rounded-md flex justify-between p-6'>
+                    <div className='col-span-2 bg-[#19171E] rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center p-8 mt-4'>
                         <div>
-                            <p className="font-semibold">Still need help?</p>
-                            <p className="my-2 text-sm my-2">
+                            <h3 className="text-lg font-semibold text-white mb-2">Still need help?</h3>
+                            <p className="text-gray-400 text-sm mb-4">
                                 We’re here for you. Drop us an email and we’ll respond within 24 hours.
                             </p>
-                            <button className='p-4 text-white bg-[#233E97] rounded-md'>support@sharepro.com</button>
+                            <a href="mailto:support@sharepro.com">
+                                <button className='px-6 py-3 text-white bg-primary rounded-md font-medium hover:bg-[#1a4bd9] transition'>support@sharepro.com</button>
+                            </a>
                         </div>
-                        <img src="/assets/streamline-color_send-email-flat.svg" alt="" />
+                        <img src="/assets/streamline-color_send-email-flat.svg" alt="Send Email" className="w-28 h-28 object-contain" />
                     </div>
                 </div>
             </section>

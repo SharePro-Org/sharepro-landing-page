@@ -13,12 +13,12 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
     };
 
     return (
-        <div className="w-full max-w-2xl mx-auto border border-gray-200 rounded-lg divide-y divide-gray-200">
+        <div className="w-full max-w-2xl mx-auto border border-[#3D3D3D] rounded-lg">
             {items.length > 0 ? items.map((item, index) => (
-                <div key={index} className="bg-white">
+                <div key={index} className="">
                     <button
                         onClick={() => toggleAccordion(index)}
-                        className="w-full flex justify-between items-center p-4 text-left font-medium text-gray-800 hover:bg-gray-50 focus:outline-none"
+                        className="w-full flex justify-between items-center p-4 text-left font-medium text-white focus:outline-none"
                     >
                         <span className="capitalize">{item.question}</span>
                         <span
