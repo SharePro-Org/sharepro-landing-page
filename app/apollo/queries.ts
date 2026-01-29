@@ -49,19 +49,20 @@ export const GET_PLANS = gql`
   }
 `;
 
-export const WALKTHROUGH_VIDEOS = gql`
-  query walkthroughVideos {
+export const ALL_WALKTHROUGH_VIDEOS = gql`
+  query GetAllWalkthroughVideos {
     walkthroughVideos {
-      category
-      createdAt
-      description
-      fileUrl
       id
       name
-      thumbnail
+      description
+      category
+      fileUrl
       thumbnailUrl
-      isActive
+      duration
+      order
+      isFeatured
       viewCount
+      createdAt
     }
   }
 `;

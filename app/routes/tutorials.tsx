@@ -2,7 +2,7 @@ import { Clock, Play, SearchIcon } from 'lucide-react';
 import React from 'react';
 import type { Route } from "./+types/home";
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
-import { WALKTHROUGH_VIDEOS } from '../apollo/queries';
+import { ALL_WALKTHROUGH_VIDEOS } from '../apollo/queries';
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -32,7 +32,7 @@ const tutorials = () => {
                     cache: new InMemoryCache(),
                 });
 
-                const { data } = await client.query({ query: WALKTHROUGH_VIDEOS });
+                const { data } = await client.query({ query: ALL_WALKTHROUGH_VIDEOS });
                 const videos = (data as any)?.walkthroughVideos || [];
                 setVideos(videos);
                 setVideosError(null);

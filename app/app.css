@@ -1,14 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Clash Display Font Family */
+@font-face {
+    font-family: "Clash Display";
+    src: url("/fonts/ClashDisplay-Extralight.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Clash Display";
+    src: url("/fonts/ClashDisplay-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Clash Display";
+    src: url("/fonts/ClashDisplay-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Clash Display";
+    src: url("/fonts/ClashDisplay-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Clash Display";
+    src: url("/fonts/ClashDisplay-Semibold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Clash Display";
+    src: url("/fonts/ClashDisplay-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
 @import "tailwindcss";
 
-body {
+a, p, button{
     font-family: "Public Sans", sans-serif;
 }
 
 @theme {
     /* Colors */
-    --color-primary: #233E97;
+    --color-primary: #155DFC;
     --color-secondary: #A16AD4;
     --color-accent-1: #5977D9;
     --color-accent-2: #539EF0;
@@ -52,7 +95,8 @@ body {
     --radius-full: 9999px;
 
     /* Font Family */
-    --font-sans: "Public Sans", sans-serif;
+    --font-sans: "Clash Display", sans-serif;
+    --font-display: "Clash Display", sans-serif;
 
     /* Font Size */
     --font-size-xs: 12px;
@@ -63,12 +107,12 @@ body {
     --font-size-2xl: 24px;
 }
 
-#cta{
+#cta {
     background: url('/assets/pattern.svg') no-repeat center;
     background-color: #A16AD4;
 }
 
-#serve{
+#serve {
     background: url('/assets/service-pattern.svg') no-repeat center;
     background-color: #030229;
 }

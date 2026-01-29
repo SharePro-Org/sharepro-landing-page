@@ -5,31 +5,34 @@ const HeaderNav = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <header className="bg-white shadow-sm w-full z-50">
+        <header className="bg-[#0D0B12] shadow-sm w-full z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <div className="flex items-center">
                         <Link to="/">
-                            <img src="/assets/logo-white.svg" className="w-32" alt="Logo" />
+                            <img src="/assets/logo-new.png" className="w-32" alt="Logo" />
                         </Link>
                     </div>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex space-x-8">
-                        <Link to="/tutorials" className="text-gray-700 hover:text-gray-900 font-medium">
-                            How It Works
+                        <Link to="/" className="text-[#B7B4C7] font-medium">
+                            Home
                         </Link>
-                        <a href="#features" className="text-gray-700 hover:text-gray-900 font-medium">
+                        {/* <Link to="/tutorials" className="text-[#B7B4C7] font-medium">
+                            How It Works
+                        </Link> */}
+                        <a href="#features" className="text-[#B7B4C7] font-medium">
                             Features
                         </a>
-                        <a href="#pricing" className="text-gray-700 hover:text-gray-900 font-medium">
+                        <a href="#pricing" className="text-[#B7B4C7] font-medium">
                             Pricing
                         </a>
-                        <Link to="/about" className="text-gray-700 hover:text-gray-900 font-medium">
+                        <Link to="/about" className="text-[#B7B4C7] font-medium">
                             About
                         </Link>
-                        <Link to="/help-support" className="text-gray-700 hover:text-gray-900 font-medium">
+                        <Link to="/help-support" className="text-[#B7B4C7] font-medium">
                             Help & Support
                         </Link>
                     </nav>
@@ -37,7 +40,7 @@ const HeaderNav = () => {
                     {/* Auth Buttons (Desktop) */}
                     <div className="hidden md:flex items-center space-x-4">
                         <Link to="https://sharepro-web.netlify.app/auth/sign-in">
-                            <button className="text-gray-700 hover:text-gray-900 font-medium">
+                            <button className="text-[#B7B4C7] font-medium">
                                 Login
                             </button>
                         </Link>

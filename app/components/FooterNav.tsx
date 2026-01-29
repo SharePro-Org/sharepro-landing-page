@@ -4,13 +4,13 @@ import { Facebook, Twitter, Instagram } from "lucide-react";
 
 const FooterNav = () => {
     return (
-        <footer className="bg-[#F3F6F8] py-12 px-4 sm:px-6 lg:px-8">
+        <footer className="bg-[#0D0B12] py-12 px-4 sm:px-6 lg:px-8 text-white">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
                     {/* Logo and Tagline */}
                     <div className="mb-6 md:mb-0">
-                        <img src="/assets/logo-white.svg" alt="Logo" className="w-32 mb-2" />
-                        <p className="text-gray-600 max-w-xs">
+                        <img src="/assets/logo-new.png" alt="Logo" className="w-32 mb-2" />
+                        <p className=" max-w-xs">
                             Built to help businesses grow through smart loyalty and
                             referrals.
                         </p>
@@ -18,38 +18,38 @@ const FooterNav = () => {
 
                     {/* Navigation Links */}
                     <nav className="flex flex-wrap gap-6 md:gap-8">
-                        <Link to="/tutorials" className="text-gray-600 hover:text-gray-900">
+                        <Link to="/tutorials" className="">
                             How It Works
                         </Link>
-                        <Link to="/terms-of-use" className="text-gray-600 hover:text-gray-900">
+                        <Link to="/terms-of-use" className="">
                             Terms of Use
                         </Link>
-                        <Link to="/privacy-policy" className="text-gray-600 hover:text-gray-900">
+                        <Link to="/privacy-policy" className="">
                             Privacy Policy
                         </Link>
-                        <Link to="/about" className="text-gray-600 hover:text-gray-900">
+                        <Link to="/about" className="">
                             About
                         </Link>
-                        <Link to="/help-support" className="text-gray-600 hover:text-gray-900">
+                        <Link to="/help-support" className="">
                             Help & Support
                         </Link>
                     </nav>
                 </div>
 
-                <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
-                    <p className="text-gray-500 text-sm mb-4 md:mb-0">
+                <div className="pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p className="text-sm mb-4 md:mb-0">
                         © 2025 SharePro. All rights reserved.
                     </p>
 
                     {/* Social Media Icons */}
                     <div className="flex space-x-4">
-                        <a href="#" className="text-gray-400 hover:text-gray-600">
+                        <a href="#" className="">
                             <Facebook size={20} />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-gray-600">
+                        <a href="#" className="">
                             <Twitter size={20} />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-gray-600">
+                        <a href="#" className="">
                             <Instagram size={20} />
                         </a>
                         {/* </a>

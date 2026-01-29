@@ -19,241 +19,318 @@ export default function Home() {
   const { data: plansData, loading: plansLoading, error: plansError } = useQuery<{ plans: any[] }>(GET_PLANS);
 
   return (
-    <main className="bg-[#F3F6F8] text-[#030229]">
+    <main className="bg-[#0D0B12] text-white">
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto text-center px-4">
-        <div className="max-w-3xl mx-auto py-20">
-          <h1 className="text-4xl md:text-5xl font-bold">
-            Turn Your{" "}
-            <span className="text-[#233E97]">Customers</span> into Your Biggest{" "}
-            <span className="text-[#233E97]">Promoters</span>
+      <section className="max-w-7xl mx-auto text-center px-4 py-20">
+        <div className="max-w-3xl mx-auto mb-12">
+          <button className="bg-transparent text-[#FFFFFF] px-4 py-2 rounded-full text-sm mb-4 border border-white">
+            #1 Africa Leading Customer Reward System
+          </button>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            Turn Customers Into{" "}
+            <span className="text-white">Loyal Advocates.</span>
           </h1>
-          <p className="text-[#030229B2] max-w-2xl mx-auto mt-6">
-            A smart referral and loyalty platform that helps businesses grow
-            through word-of-mouth and repeat engagement.
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg mb-8">
+            Build powerful referral and loyalty programs that drive sustainable growth. Simple to set up, powerful in results.
           </p>
-          <div className="flex justify-center gap-4 mt-8">
+          <div className="flex justify-center gap-4 flex-wrap">
             <Link to="https://sharepro-web.netlify.app/auth/sign-up">
-              <button className="bg-[#233E97] w-44 p-4 text-white rounded-md">
-                Get Started
+              <button className="bg-primary px-8 py-3 text-white rounded-md font-medium hover:bg-[#1a2d73] transition">
+                Start Free Trial
               </button>
             </Link>
-            <Link to="https://sharepro-web.netlify.app/auth/sign-in">
-              <button className="bg-[#A16AD4] w-44 p-4 text-white rounded-md">
-                Log into Dashboard
-              </button>
-            </Link>
+            <button className="border border-[#2C303F] px-8 py-3 text-white rounded-md font-medium hover:bg-gray-900 transition">
+              Learn More
+            </button>
           </div>
         </div>
-        <img
+        {/* <img
           src="/assets/hero-img.png"
           alt="Dashboard preview"
-          className=""
-        />
+          className="rounded-lg shadow-2xl max-w-4xl mx-auto"
+        /> */}
       </section>
 
-      {/* How It Works */}
-      <section className="bg-[#243F99] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-2">How It Works</h2>
-          <p className="text-center">Start growing through the power of loyalty and referrals in just a few simple steps.</p>
-          <div className="grid md:grid-cols-4 gap-8 text-left mt-12">
+      {/* Why SharePro Section */}
+      <section className="bg-[#0D0B12] text-white py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Why SharePro</h2>
+            <p className="text-[#B7B4C7] lg:max-w-2xl mx-auto">
+              SharePro makes retention simple, helping small businesses grow with the same tools global brands use.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                step: "Step 1",
-                title: "Create a Campaign",
-                desc: "Set up referral, loyalty, or combo campaigns in minutes.",
+                title: "Increased Repeat Purchases",
+                desc: "Reward customers for buying more and coming back.",
+                img: "/assets/steps/why-1.png"
               },
               {
-                step: "Step 2",
-                title: "Share Links Easily",
-                desc: "Customers share your business via WhatsApp, SMS, or social.",
+                title: "Track Real Results",
+                desc: "See which referrals bring the best customers.",
+                img: "/assets/steps/why-2.png"
               },
               {
-                step: "Step 3",
-                title: "Track & Reward",
-                desc: "Monitor performance and automate customer rewards.",
+                title: "Save Word of Mouth",
+                desc: "Capture organic growth and turn it into results.",
+                img: "/assets/steps/why-3.png"
               },
               {
-                step: "Step 4",
-                title: "Watch Growth Happen",
-                desc: "Gain loyal customers and boost conversions effortlessly.",
+                title: "Increased Visibility",
+                desc: "Make it easy for customers to find and share you.",
+                img: "/assets/steps/why-4.png"
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-[#1a1820] rounded-lg p-6 border border-gray-800 hover:border-[#233E97] transition">
+                <h3 className="font-semibold text-xl mb-2">{item.title}</h3>
+                <p className="text-gray-400 mb-4">{item.desc}</p>
+                <img src={item.img} alt={item.title} className="rounded-lg w-full" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Referrals Section */}
+      <section className="bg-[#13111A] text-white py-20">
+        <div className="max-w-7xl mx-auto px-4">
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="mb-16">
+                <h2 className="text-4xl font-bold mb-4">Referrals Made Simple</h2>
+                <p className="text-[#B7B4C7] lg:max-w-2xl mx-auto">
+                  Turn your happy customers into brand ambassadors with simple referral links they can easily share across all channels.
+                </p>
+              </div>
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "Easy Sharing",
+                    desc: "One-click sharing across email, social media, and messaging platforms.",
+                    icon: "Icon25"
+                  }, {
+                    title: "Reward Both Parties",
+                    desc: "Incentivize referrers and new customers with customizable rewards.",
+                    icon: "Icon26"
+                  }, {
+                    title: "Instant Tracking",
+                    desc: "Real-time analytics on referral performance and conversion rates.",
+                    icon: "Icon27"
+                  }
+
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#1A1625] text-white">
+                        <img src={`/assets/icons/${item.icon}.svg`} alt="" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1">{item.title}</h3>
+                      <p className="text-[#B7B4C7]">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-[#1a1820] rounded-lg p-6 border border-gray-800">
+              <img src="/assets/referrals.png" alt="Referrals" className="w-full rounded-lg" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* How It Works */}
+      <section className="bg-[#0D0B12] text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="mb-16">
+            <button className="bg-transparent text-[#FFFFFF] px-4 py-2 rounded-full text-sm mb-4 border border-white">
+              For Businesses
+            </button>
+            <h2 className="text-4xl font-bold mb-4">How It Works</h2>
+            <p className="text-[#B7B4C7] max-w-2xl mx-auto">
+              In just a few clicks, you can launch a loyalty or referral program that rewards your customers, tracks every interaction, and helps your business grow, automatically.            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Create Your Program",
+                desc: "Set up a loyalty or referral campaign in minutes. Just pick a template, customize your rewards, and hit launch.",
+                icon: "Container11.svg"
+              },
+              {
+                step: "02",
+                title: "Get Customers to Join",
+                desc: "Share your unique link. Customers can join instantly through WhatsApp, Email, and other social media outlets.",
+                icon: "Container14.svg"
+              },
+              {
+                step: "03",
+                title: "Reward & Grow Automatically",
+                desc: "Every repeat purchase and referral is tracked for you. Rewards go out instantly, and your sales grow on autopilot.",
+                icon: "Container17.svg"
               },
             ].map((item, i) => (
               <div
                 key={i}
-                className="p-6 rounded-md border border-[#FFFFFF1A]"
+                className="bg-[#1a1820] p-8 rounded-lg border border-[#2C303F] hover:border-[#233E97] transition text-left"
               >
-                <img src={`/assets/steps/step-${i + 1}.png`} alt="" />
-                <h4 className="font-semibold text-sm uppercase mb-2">
-                  {item.step}
-                </h4>
-                <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-200">{item.desc}</p>
+                <img className="mb-6" src={`/assets/icons/${item.icon}`} alt="" />
+                {/* <div className="text-3xl font-bold text-[#233E97] mb-4">{item.step}</div> */}
+                <h3 className="font-bold text-xl mb-3">{item.title}</h3>
+                <p className="text-gray-400">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Key Features */}
-      <section id="features" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Key Features</h2>
-          <p className="text-[#030229B2] mb-12">
-            Everything you need to grow through referrals and loyalty.
-          </p>
-          <div className="grid md:grid-cols-3 gap-8 text-left">
+
+      {/* Earn Rewards Section */}
+      <section className="bg-[#0D0B12] text-white py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16 lg:max-w-lg mx-auto">
+            <button className="bg-transparent text-[#FFFFFF] px-4 py-2 rounded-full text-sm mb-4 border border-white">
+              For Customers
+            </button>
+            <h2 className="text-4xl font-bold mb-4">Earn Rewards for Shopping and Sharing</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Customers earn rewards for both purchases and successful referrals, creating a win-win that boosts loyalty.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
             {[
-              "Referral Campaigns",
-              "Loyalty Programs",
-              "Channel Analytics",
-              "Reward Management",
-              "Team Access",
-              "Wallet & Payouts",
-            ].map((feature, i) => (
+              {
+                icon: "Container11.svg",
+                title: "Join Campaigns Instantly",
+                desc: "Set up a loyalty or referral campaign in minutes. Just pick a template, customize your rewards, and hit launch."
+              },
+              {
+                icon: "Container14.svg",
+                title: "Shop and Invite Friends to Shop!",
+                desc: "Share your unique link. Customers can join instantly through WhatsApp, Email, and other social media outlets."
+              },
+              {
+                icon: "Container17.svg",
+                title: "Earn Amazing Rewards",
+                desc: "Every repeat purchase and referral is tracked for you. Rewards go out instantly, and your sales grow on autopilot."
+              },
+            ].map((item, i) => (
               <div
                 key={i}
-                className="p-8 rounded-xl hover:shadow-lg transition bg-[#F3F6F880]"
+                className="bg-[#1a1820] p-8 rounded-lg border border-[#2C303F] hover:border-[#233E97] transition text-left"
               >
-                <h3 className="font-semibold text-lg">{feature}</h3>
-                <p className="text-sm text-[#030229B2] my-2">
-                  {feature === "Referral Campaigns" &&
-                    "Turn happy customers into brand promoters."}
-                  {feature === "Loyalty Programs" &&
-                    "Reward repeat engagement and boost retention."}
-                  {feature === "Channel Analytics" &&
-                    "See which platforms bring the best results."}
-                  {feature === "Reward Management" &&
-                    "Set up and automate custom reward systems."}
-                  {feature === "Team Access" &&
-                    "Invite your team to collaborate and manage campaigns."}
-                  {feature === "Wallet & Payouts" &&
-                    "Fund campaigns and track reward spending with ease."}
-                </p>
-                <img className="mt-4" src={`/assets/keys/key-${i + 1}.png`} alt="" />
-
+                <img className="mb-6" src={`/assets/icons/${item.icon}`} alt="" />
+                {/* <div className="text-3xl font-bold text-[#233E97] mb-4">{item.step}</div> */}
+                <h3 className="font-bold text-xl mb-3">{item.title}</h3>
+                <p className="text-gray-400">{item.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose SharePro */}
-      <section className="bg-[#EFF2F8] py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold">Why Choose SharePro?</h2>
-            <p className="mt-4">The smarter way to grow your business.</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-12 items-center mt-6">
-            <div>
-              <ul className="space-y-4 text-[#030229B2]">
-                <li className="border border-[#0302291A] p-4 rounded-md">
-                  <strong>Cut Marketing Costs</strong>{" "} <br />
-                  Grow through referrals instead of expensive ads.
-                </li>
-                <li className="border border-[#0302291A] p-4 rounded-md">
-                  <strong>
-                    Boost Customer Retention
-                  </strong>{" "} <br />
-                  Reward loyalty and keep customers coming back.
-                </li>
-                <li className="border border-[#0302291A] p-4 rounded-md">
-                  <strong>Easy to Set Up</strong> <br />
-                  Launch campaigns without any technical skills.
-                </li>
-                <li className="border border-[#0302291A] p-4 rounded-md">
-                  <strong>Works Everywhere</strong> <br />
-                  Share links via WhatsApp, SMS, Instagram, and more.
-                </li>
-              </ul>
-            </div>
-            <img
-              src="/assets/why-us.png"
-              alt="Happy customer using SharePro"
-              className="rounded-2xl shadow-md"
-            />
           </div>
         </div>
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center ">
-            <h2 className="text-3xl font-bold mb-4">Pricing Preview</h2>
-            <p className="text-[#030229B2] mb-12">
-              Simple pricing that scales with you.
+      <section id="pricing" className="py-20 bg-[#0D0B12] text-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Start with “Free for your first 100 customers
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {plansLoading ? (
-              <div className="col-span-3 flex justify-center items-center py-8">
+              <div className="col-span-4 flex justify-center items-center py-8">
                 <span className="text-gray-500">Loading plans...</span>
               </div>
             ) : plansError ? (
-              <div className="col-span-3 flex justify-center items-center py-8">
+              <div className="col-span-4 flex justify-center items-center py-8">
                 <span className="text-red-500">Error loading plans</span>
               </div>
             ) : plansData?.plans?.length ? (
-              plansData.plans.map((plan) => (
-                <div key={plan.id} className="bg-white rounded-md p-4 border border-[#E5E5EA]">
-                  <div className="border-b border-b-[#E5E5EA] pb-3">
-                    <h2 className="text-primary mb-2 flex items-center gap-2">
-                      {plan.name}
-                      {plan.isPopular && (
-                        <span className="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Popular</span>
-                      )}
-                    </h2>
-                    <div className="flex gap-2">
-                      <span className="font-semibold text-lg">
-                        {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(plan.price)}
+              plansData.plans.map((plan, idx) => (
+                <div
+                  key={plan.id}
+                  className={`rounded-lg p-6 border transition ${plan.isPopular
+                    ? "bg-[#155DFC] border-[#BDD2FF] ring-2 ring-[#233E97] relative"
+                    : "bg-[#1a1820] border-[#302C3F] hover:border-gray-700"
+                    }`}
+                >
+                  {plan.isPopular && (
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <span className="bg-white text-[#233E97] text-xs font-semibold px-3 py-1 rounded-full">
+                        Popular
                       </span>
-                      <span className="my-auto">/{plan.billablePeriods}</span>
                     </div>
+                  )}
+                  <div className="mb-6">
+                    <h3 className={`text-lg font-semibold mb-2 ${plan.isPopular ? "text-white" : "text-white"}`}>
+                      {plan.name}
+                    </h3>
+                    <div className="flex items-baseline gap-2 mb-4">
+                      <span className={`text-3xl font-bold ${plan.isPopular ? "text-white" : "text-white"}`}>
+                        {new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN', maximumFractionDigits: 0 }).format(plan.price)}
+                      </span>
+                      <span className={`text-sm ${plan.isPopular ? "text-gray-100" : "text-gray-400"}`}>
+                        /{plan.billablePeriods}
+                      </span>
+                    </div>
+                    <Link to="https://sharepro-web.netlify.app/auth/sign-up">
+                      <button
+                        className={`w-full py-2 rounded-md font-medium transition
+                          bg-white text-[#161616] hover:bg-gray-100
+                          `}
+                      >
+                        Get Started
+                      </button>
+                    </Link>
                   </div>
-                  <ul className="text-sm space-y-1 my-3 min-h-[120px]">
+                  <ul className={`space-y-2 text-sm ${plan.isPopular ? "text-gray-100" : "text-white"}`}>
                     {plan.description && (
-                      <li className="flex items-center gap-2 my-1">
-                        <span className="text-black">✓</span>
+                      <li className="flex items-center gap-2">
+                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-current"></span>
                         {plan.description}
                       </li>
                     )}
-                    <li className="flex items-center gap-2 my-1">
-                      <span className="text-black">✓</span>
-                      Max Campaigns: {plan.maxCampaigns}
+                    <li className="flex items-center gap-2">
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-current"></span>
+                      Up to {plan.maxCampaigns} campaigns
                     </li>
-                    <li className="flex items-center gap-2 my-1">
-                      <span className="text-black">✓</span>
-                      Max Referrals: {plan.maxReferrals}
+                    <li className="flex items-center gap-2">
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-current"></span>
+                      {plan.maxReferrals?.toLocaleString()} referrals/month
                     </li>
-                    <li className="flex items-center gap-2 my-1">
-                      <span className="text-black">✓</span>
-                      Max Team Members: {plan.maxTeamMembers}
+                    <li className="flex items-center gap-2">
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-current"></span>
+                      {plan.maxTeamMembers} team members
                     </li>
-                    <li className="flex items-center gap-2 my-1">
-                      <span className="text-black">✓</span>
-                      Analytics: {plan.analyticsEnabled ? 'Yes' : 'No'}
+                    <li className="flex items-center gap-2">
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-current"></span>
+                      {plan.analyticsEnabled ? "Advanced" : "Basic"} analytics
                     </li>
-                    <li className="flex items-center gap-2 my-1">
-                      <span className="text-black">✓</span>
-                      Custom Branding: {plan.customBranding ? 'Yes' : 'No'}
-                    </li>
-                    <li className="flex items-center gap-2 my-1">
-                      <span className="text-black">✓</span>
-                      Priority Support: {plan.prioritySupport ? 'Yes' : 'No'}
-                    </li>
+                    {plan.customBranding && (
+                      <li className="flex items-center gap-2">
+                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-current"></span>
+                        Custom branding
+                      </li>
+                    )}
+                    {plan.prioritySupport && (
+                      <li className="flex items-center gap-2">
+                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-current"></span>
+                        Priority support
+                      </li>
+                    )}
                   </ul>
-                  <div className="mt-4">
-                    <Link to="https://sharepro-web.netlify.app/auth/sign-up">
-                      <button className="text-sm w-full rounded-sm bg-[#ECF3FF] text-[#233E97] p-4">Get Started</button>
-                    </Link>
-                  </div>
                 </div>
               ))
             ) : (
-              <div className="col-span-3 flex justify-center items-center py-8">
+              <div className="col-span-4 flex justify-center items-center py-8">
                 <span className="text-gray-500">No plans available</span>
               </div>
             )}
