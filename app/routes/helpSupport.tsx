@@ -173,4 +173,4 @@ const helpSupport = () => {
     );
 };
 
-export default helpSupport;
+export default helpSupport

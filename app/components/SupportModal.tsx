@@ -81,7 +81,7 @@ const SupportRequestModal: React.FC<SupportRequestModalProps> = ({
             onClick={onClose}
         >
             <div
-                className="bg-white rounded-lg shadow-lg w-full max-w-lg p-6 relative animate-fadeIn"
+                className="bg-[#0D0B12] text-white rounded-lg shadow-lg w-full max-w-lg p-6 relative animate-fadeIn"
                 onClick={(e) => e.stopPropagation()}
             >
                 <button

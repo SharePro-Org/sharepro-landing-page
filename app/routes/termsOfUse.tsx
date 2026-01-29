@@ -13,26 +13,26 @@ export function meta({ }: Route.MetaArgs) {
 
 export default function Terms() {
     return (
-        <main className=" text-[#030229]">
+        <main className="bg-[#0D0B12] text-white min-h-screen">
             {/* Header */}
-            <section className="bg-[#F3F6F8]">
+            <section className="bg-[#0D0B12]">
                 <div className="text-center py-20 px-4">
-                    <h1 className="text-3xl md:text-4xl font-bold text-[#233E97] mb-2">
+                    <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 font-display">
                         Terms of Use
                     </h1>
-                    <p className="text-sm text-[#030229B2] mb-1">
+                    <p className="text-sm text-gray-400 mb-1">
                         <span className="font-semibold">Effective Date:</span> July 23, 2025
                     </p>
-                    <p className="text-[#030229B2] max-w-2xl mx-auto">
+                    <p className="text-gray-400 max-w-2xl mx-auto">
                         These Terms govern your use of SharePro. By using our platform, you agree to comply with them.
                     </p>
                 </div>
             </section>
 
             {/* Content */}
-            <section className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 px-4 pb-20">
+            <section className="max-w-7xl bg-[#19171E] rounded-lg mx-auto flex flex-col md:flex-row gap-10 px-4 pb-20">
                 {/* Sidebar */}
-                <aside className="bg-white p-6 rounded-lg w-full md:w-1/3 h-fit">
+                <aside className=" p-6 w-full md:w-1/3 h-fit">
                     <ul className="flex flex-col gap-3">
                         {[
                             "Use of the Platform",
@@ -44,9 +44,9 @@ export default function Terms() {
                         ].map((item, index) => (
                             <li
                                 key={index}
-                                className={`border rounded-md text-sm p-3 ${index === 0
-                                    ? "border-[#233E97] text-[#233E97] font-semibold"
-                                    : "border-gray-200 text-[#030229B2]"
+                                className={`border rounded-md text-sm p-3 transition-colors ${index === 0
+                                    ? " text-black font-semibold bg-white"
+                                    : "border-white text-gray-300 bg-transparent"
                                     }`}
                             >
                                 {index + 1}. {item}
@@ -56,8 +56,8 @@ export default function Terms() {
                 </aside>
 
                 {/* Main Content */}
-                <article className="flex-1 bg-white p-8 rounded-lg leading-relaxed text-[#030229B2] text-sm">
-                    <h2 className="text-2xl font-semibold text-[#030229] mb-4">
+                <article className="flex-1 p-8 leading-relaxed text-gray-300 text-sm">
+                    <h2 className="text-2xl font-semibold text-white mb-4">
                         Use of the Platform
                     </h2>
 
