@@ -61,7 +61,7 @@ const helpSupport = () => {
     ] as const;
 
     return (
-        <main className="bg-[#0D0B12] text-white min-h-screen">
+        <main className="bg-[#0D0B12] text-white min-h-screen lg:px-0 px-2">
             <section className="bg-[#0D0B12]">
                 <div className="text-center py-20 px-4">
                     <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 font-display">
@@ -90,7 +90,7 @@ const helpSupport = () => {
                     </div>
                 </div>
             </section>
-            <section className='max-w-7xl mx-auto rounded-lg bg-[#19171E] p-10 border-b border-[#232136]'>
+            <section className='max-w-7xl mx-auto rounded-lg bg-[#19171E] lg:p-10 p-4 border-b border-[#232136]'>
                 <div className=' md:grid md:grid-cols-2 gap-8'>
                     <div>
                         <h2 className="text-2xl font-semibold text-white mb-4">
@@ -109,14 +109,14 @@ const helpSupport = () => {
                         </div>
                     </div>
                     <div>
-                        <div className="rounded-xl p-6 mt-4 md:mt-0">
+                        <div className="rounded-xl lg:p-6 mt-4 md:mt-0">
                             <Accordion items={faqs} />
                         </div>
                     </div>
                 </div>
             </section>
             <section className="bg-[#0D0B12] py-10">
-                <div className="max-w-7xl mx-auto my-4 grid md:grid-cols-2 gap-8">
+                <div className="max-w-7xl mx-auto my-4 lg:grid md:grid-cols-2 gap-8">
                     <div className="bg-[#19171E] rounded-2xl p-8 flex flex-col justify-between">
                         <img src="/assets/002.png" className='w-10' alt="" />
                         <h3 className="text-lg font-semibold text-white mb-2">Support Request</h3>
@@ -131,7 +131,7 @@ const helpSupport = () => {
                         </button>
                     </div>
 
-                    <div className="bg-[#19171E] rounded-2xl p-8 flex flex-col justify-between">
+                    <div className="bg-[#19171E] rounded-2xl p-8 flex flex-col justify-between lg:mt-0 mt-4">
                         <img src="/assets/001.png" className='w-10' alt="" />
 
                         <h3 className="text-lg font-semibold text-white mb-2">Walkthroughs</h3>
@@ -155,7 +155,7 @@ const helpSupport = () => {
                                 <button className='px-6 py-3 text-white bg-primary rounded-md font-medium hover:bg-[#1a4bd9] transition'>support@sharepro.com</button>
                             </a>
                         </div>
-                        <img src="/assets/streamline-color_send-email-flat.svg" alt="Send Email" className="w-28 h-28 object-contain" />
+                        <img src="/assets/streamline-color_send-email-flat.svg" alt="Send Email" className="w-28 h-28 lg:block hidden object-contain" />
                     </div>
                 </div>
             </section>

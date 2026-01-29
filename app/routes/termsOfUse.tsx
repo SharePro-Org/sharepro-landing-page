@@ -13,7 +13,7 @@ export function meta({ }: Route.MetaArgs) {
 
 export default function Terms() {
     return (
-        <main className="bg-[#0D0B12] text-white min-h-screen">
+        <main className="bg-[#0D0B12] text-white min-h-screen lg:px-0 px-2">
             {/* Header */}
             <section className="bg-[#0D0B12]">
                 <div className="text-center py-20 px-4">

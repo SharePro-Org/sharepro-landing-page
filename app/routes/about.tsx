@@ -14,7 +14,7 @@ export function meta({ }: Route.MetaArgs) {
 
 export default function About() {
     return (
-        <main className="bg-[#0D0B12] text-white">
+        <main className="bg-[#0D0B12] text-white lg:px-0 px-2">
             {/* Hero Section */}
             <section className="bg-[#0D0B12]">
                 <div className="max-w-3xl mx-auto text-center py-20 px-4">
@@ -39,7 +39,7 @@ export default function About() {
                 <img
                     src="/assets/why-us.png"
                     alt="Customer using SharePro"
-                    className="rounded-sm h-[500px] object-cover shadow-md w-full"
+                    className="rounded-sm lg:h-[500px] object-cover shadow-md w-full"
                 />
             </section>
 

@@ -57,7 +57,7 @@ const tutorials = () => {
         "Team & Settings",
     ];
     return (
-        <main className="bg-[#0D0B12] min-h-screen">
+        <main className="bg-[#0D0B12] min-h-screen lg:px-0 px-2">
             <section className="bg-[#0D0B12]">
                 <div className="text-center py-20 px-4">
                     <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 font-display">

@@ -34,7 +34,7 @@ export default function Home() {
             Build powerful referral and loyalty programs that drive sustainable growth. Simple to set up, powerful in results.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
-            <Link to="https://sharepro-web.netlify.app/auth/sign-up">
+            <Link to="https://app.mysharepro.com/auth/sign-up">
               <button className="bg-primary px-8 py-3 text-white rounded-md font-medium hover:bg-[#1a2d73] transition">
                 Start Free Trial
               </button>
@@ -281,7 +281,7 @@ export default function Home() {
                         /{plan.billablePeriods}
                       </span>
                     </div>
-                    <Link to="https://sharepro-web.netlify.app/auth/sign-up">
+                    <Link to="https://app.mysharepro.com/auth/sign-up">
                       <button
                         className={`w-full py-2 rounded-md font-medium transition
                           bg-white text-[#161616] hover:bg-gray-100

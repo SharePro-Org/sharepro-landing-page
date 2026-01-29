@@ -39,12 +39,12 @@ const HeaderNav = () => {
 
                     {/* Auth Buttons (Desktop) */}
                     <div className="hidden md:flex items-center space-x-4">
-                        <Link to="https://sharepro-web.netlify.app/auth/sign-in">
+                        <Link to="https://app.mysharepro.con/auth/sign-in">
                             <button className="text-[#B7B4C7] font-medium">
                                 Login
                             </button>
                         </Link>
-                        <Link to="https://sharepro-web.netlify.app/auth/sign-up">
+                        <Link to="https://app.mysharepro.com/auth/sign-up">
                             <button className="bg-primary text-white px-4 py-2 rounded-sm font-medium">
                                 Get Started
                             </button>
@@ -84,39 +84,39 @@ const HeaderNav = () => {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="md:hidden bg-white shadow-md border-t border-gray-100">
+                <div className="md:hidden bg-[#0D0B12] shadow-md border-t border-gray-100">
                     <nav className="flex flex-col space-y-4 px-6 py-4">
                         <Link
                             to="/tutorials"
-                            className="text-gray-700 hover:text-gray-900 font-medium"
+                            className="font-medium text-white"
                             onClick={() => setMenuOpen(false)}
                         >
                             How It Works
                         </Link>
                         <a
                             href="/#features"
-                            className="text-gray-700 hover:text-gray-900 font-medium"
+                            className="text-white font-medium"
                             onClick={() => setMenuOpen(false)}
                         >
                             Features
                         </a>
                         <a
                             href="/#pricing"
-                            className="text-gray-700 hover:text-gray-900 font-medium"
+                            className="text-white font-medium"
                             onClick={() => setMenuOpen(false)}
                         >
                             Pricing
                         </a>
                         <Link
                             to="/about"
-                            className="text-gray-700 hover:text-gray-900 font-medium"
+                            className="text-white font-medium"
                             onClick={() => setMenuOpen(false)}
                         >
                             About
                         </Link>
                         <Link
                             to="/help-support"
-                            className="text-gray-700 hover:text-gray-900 font-medium"
+                            className="text-white font-medium"
                             onClick={() => setMenuOpen(false)}
                         >
                             Help & Support
@@ -124,12 +124,12 @@ const HeaderNav = () => {
 
                         <hr className="border-gray-200" />
 
-                        <Link to="https://sharepro-web.netlify.app/auth/sign-in" onClick={() => setMenuOpen(false)}>
-                            <button className="w-full text-left text-gray-700 hover:text-gray-900 font-medium">
+                        <Link to="https://app.mysharepro.com/auth/sign-in" onClick={() => setMenuOpen(false)}>
+                            <button className="w-full text-left text-white font-medium">
                                 Login
                             </button>
                         </Link>
-                        <Link to="https://sharepro-web.netlify.app/auth/sign-up" onClick={() => setMenuOpen(false)}>
+                        <Link to="https://app.mysharepro.com/auth/sign-up" onClick={() => setMenuOpen(false)}>
                             <button className="w-full bg-primary text-white px-4 py-2 rounded-sm font-medium">
                                 Get Started
                             </button>
