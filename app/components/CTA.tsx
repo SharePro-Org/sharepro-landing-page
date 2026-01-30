@@ -17,8 +17,11 @@ const CTA = () => {
                         Join thousands of businesses using Rewards to drive growth through referrals and loyalty programs.                </p>
                     <div className="flex justify-center gap-4">
                         <Link to="https://app.mysharepro.com/auth/sign-up">
-                            <button className="bg-primary text-white px-6 py-3 rounded-md font-semibold">
+                            <button className="bg-primary text-white px-6 py-3 rounded-md font-semibold flex items-center gap-2">
                                 Start Free Trial
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 12H6.75m6 6 6-6-6-6" />
+                                </svg>
                             </button>
                         </Link>
                         <Link to="https://app.mysharepro.com/auth/sign-in">

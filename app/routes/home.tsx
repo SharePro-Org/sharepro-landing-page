@@ -21,7 +21,15 @@ export default function Home() {
   return (
     <main className="bg-[#0D0B12] text-white">
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto text-center px-4 py-20">
+      <div>
+
+      </div>
+      <section
+        className="relative text-center px-4 py-32"
+        style={{
+          background: 'linear-gradient(115.68deg, #0D0B12 74.16%, rgba(11, 29, 67, 0.693151) 86.74%, rgba(0, 60, 194, 0.2) 95.86%)'
+        }}
+      >
         <div className="max-w-3xl mx-auto mb-12">
           <button className="bg-transparent text-[#FFFFFF] px-4 py-2 rounded-full text-sm mb-4 border border-white">
             #1 Africa Leading Customer Reward System
@@ -35,8 +43,11 @@ export default function Home() {
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <Link to="https://app.mysharepro.com/auth/sign-up">
-              <button className="bg-primary px-8 py-3 text-white rounded-md font-medium hover:bg-[#1a2d73] transition">
+              <button className="bg-primary px-8 py-3 text-white rounded-md font-medium transition flex items-center gap-2">
                 Start Free Trial
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 12H6.75m6 6 6-6-6-6" />
+                </svg>
               </button>
             </Link>
             <button className="border border-[#2C303F] px-8 py-3 text-white rounded-md font-medium hover:bg-gray-900 transition">
@@ -52,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* Why SharePro Section */}
-      <section className="bg-[#0D0B12] text-white py-20">
+      <section id="features" className="bg-[#0D0B12] text-white py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Why SharePro</h2>

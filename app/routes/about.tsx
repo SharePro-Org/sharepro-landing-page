@@ -18,6 +18,9 @@ export default function About() {
             {/* Hero Section */}
             <section className="bg-[#0D0B12]">
                 <div className="max-w-3xl mx-auto text-center py-20 px-4">
+                    <button className="bg-transparent text-[#FFFFFF] px-4 py-2 rounded-full text-sm mb-4 border border-white">
+                        About Us
+                    </button>
                     <h1 className="text-3xl md:text-4xl font-bold text-white">
                         Empowering businesses to grow through the power of their customers.                    </h1>
                 </div>
@@ -25,7 +28,7 @@ export default function About() {
 
 
             {/* Who We Are */}
-            <section className="max-w-7xl bg-[#1a1820] rounded-lg mx-auto items-center px-4 py-10 mb-20">
+            <section className="max-w-7xl bg-[#171717] rounded-lg mx-auto items-center px-4 py-10 mb-20">
                 <div className="lg:w-1/2 text-center mx-auto">
                     <h2 className="text-3xl font-semibold mb-4">Who We Are</h2>
                     <p className="text-[#B7B4C7] mb-8">

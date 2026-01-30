@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router";
 import { Link } from "react-router";
 
 const HeaderNav = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const location = useLocation();
 
     return (
         <header className="bg-[#0D0B12] shadow-sm w-full z-50">
@@ -17,22 +19,31 @@ const HeaderNav = () => {
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex space-x-8">
-                        <Link to="/" className="text-[#B7B4C7] font-medium">
+                        <Link
+                            to="/"
+                            className={`text-[#B7B4C7] font-medium pb-2 transition-all ${location.pathname === '/' ? 'border-b-2 border-[#155DFC] text-white' : ''}`}
+                        >
                             Home
                         </Link>
                         {/* <Link to="/tutorials" className="text-[#B7B4C7] font-medium">
                             How It Works
                         </Link> */}
-                        <a href="#features" className="text-[#B7B4C7] font-medium">
+                        <a href="/#features" className="text-[#B7B4C7] font-medium pb-2">
                             Features
                         </a>
-                        <a href="#pricing" className="text-[#B7B4C7] font-medium">
+                        <a href="/#pricing" className="text-[#B7B4C7] font-medium pb-2">
                             Pricing
                         </a>
-                        <Link to="/about" className="text-[#B7B4C7] font-medium">
+                        <Link
+                            to="/about"
+                            className={`text-[#B7B4C7] font-medium pb-2 transition-all ${location.pathname === '/about' ? 'border-b-2 border-[#155DFC] text-white' : ''}`}
+                        >
                             About
                         </Link>
-                        <Link to="/help-support" className="text-[#B7B4C7] font-medium">
+                        <Link
+                            to="/help-support"
+                            className={`text-[#B7B4C7] font-medium pb-2 transition-all ${location.pathname === '/help-support' ? 'border-b-2 border-[#155DFC] text-white' : ''}`}
+                        >
                             Help & Support
                         </Link>
                     </nav>
