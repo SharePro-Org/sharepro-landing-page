@@ -21,11 +21,9 @@ export default function Home() {
   return (
     <main className="bg-[#0D0B12] text-white">
       {/* Hero Section */}
-      <div>
 
-      </div>
       <section
-        className="relative text-center px-4 py-32"
+        className="relative text-center px-4 py-20"
         style={{
           background: 'linear-gradient(115.68deg, #0D0B12 74.16%, rgba(11, 29, 67, 0.693151) 86.74%, rgba(0, 60, 194, 0.2) 95.86%)'
         }}
