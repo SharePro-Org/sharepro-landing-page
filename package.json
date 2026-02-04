@@ -28,6 +28,7 @@
     "react-router": "^7.9.2",
     "rxjs": "^7.8.2",
     "tailwindcss": "^4.1.13",
+    "aos": "^2.3.4",
     "swiper": "^10.0.4",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",

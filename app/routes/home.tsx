@@ -26,6 +26,8 @@ export default function Home() {
       <section
         id="hero"
         className="relative text-center px-4"
+        data-aos="fade-down"
+        data-aos-duration="900"
       >
         <div className="max-w-3xl mx-auto my-32">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -55,7 +57,7 @@ export default function Home() {
       </section>
 
       {/* Why SharePro Section */}
-      <section id="features" className="bg-[#E4F1FF] py-20">
+      <section id="features" className="bg-[#E4F1FF] py-20" data-aos="fade-right" data-aos-delay="80">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Built for Business Growth</h2>
@@ -115,7 +117,7 @@ export default function Home() {
       </section>
 
       {/* Earn Rewards Section */}
-      <section className="bg-[#F5F5FF] pb-10">
+      <section className="bg-[#F5F5FF] pb-10" data-aos="fade-left" data-aos-delay="120">
         <img src="/assets/Image-bags.png" alt="" />
         <div className="max-w-7xl mx-auto my-20 px-4">
           <div className="text-center mb-16">
@@ -158,7 +160,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-20" data-aos="zoom-in" data-aos-delay="80">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">How It Works</h2>
@@ -250,7 +252,7 @@ export default function Home() {
       </section>
 
       {/* built for business */}
-      <section className="bg-[#E4F1FF] py-20">
+      <section className="bg-[#E4F1FF] py-20" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top-bottom">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
 
@@ -291,7 +293,7 @@ export default function Home() {
       </section>
 
       {/* why sharepro */}
-      <section className="bg-[#F5F5FF] py-20">
+      <section className="bg-[#F5F5FF] py-20" data-aos="fade-up" data-aos-delay="140" data-aos-anchor-placement="top-bottom">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
 

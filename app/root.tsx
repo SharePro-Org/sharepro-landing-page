@@ -13,6 +13,7 @@ import HeaderNav from "./components/HeaderNav";
 import FooterNav from "./components/FooterNav";
 import { ApolloClient, HttpLink, InMemoryCache, gql } from "@apollo/client";
 import { ApolloProvider } from "@apollo/client/react";
+import AOSInit from "./components/AOSInit";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -44,6 +45,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <ApolloProvider client={client}>
           <HeaderNav />
+          <AOSInit />
           {children}
           <FooterNav />
         </ApolloProvider>
