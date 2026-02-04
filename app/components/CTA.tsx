@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const CTA = () => {
     return (
-        <section className="bg-white py-20">
+        <section className="bg-white py-20 lg:p-0 p-3">
             <div className="max-w-7xl mx-auto">
                 <div className='lg:flex'>
                     <div>

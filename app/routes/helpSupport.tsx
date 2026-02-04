@@ -90,7 +90,7 @@ const helpSupport = () => {
                     </div>
                 </div>
             </section>
-            <section className='max-w-7xl mx-auto rounded-lg bg-white lg:p-10 p-4 border-b border-gray-200'>
+            <section className='max-w-7xl mx-auto rounded-lg bg-white lg:p-10 p-4 my-6'>
                 <div className=' md:grid md:grid-cols-2 gap-8'>
                     <div>
                         <h2 className="text-2xl font-semibold text-[#030229] mb-4">
