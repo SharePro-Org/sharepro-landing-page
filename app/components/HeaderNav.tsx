@@ -4,6 +4,7 @@ import { Link } from "react-router";
 
 const HeaderNav = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [resourcesOpen, setResourcesOpen] = useState(false);
     const location = useLocation();
 
     return (
@@ -21,7 +22,7 @@ const HeaderNav = () => {
                     <nav className="hidden md:flex space-x-8">
                         <Link
                             to="/"
-                            className={`text-[#4A5565] font-medium pb-2 transition-all ${location.pathname === '/' ? 'border-b-2 border-[#155DFC]' : ''}`}
+                            className={`text-[#4A5565] font-medium pb-2 transition-all ${location.pathname === '/' ? 'border-b-2 border-primary' : ''}`}
                         >
                             Home
                         </Link>
@@ -36,16 +37,37 @@ const HeaderNav = () => {
                         </a>
                         <Link
                             to="/about"
-                            className={`text-[#4A5565] font-medium pb-2 transition-all ${location.pathname === '/about' ? 'border-b-2 border-[#155DFC]' : ''}`}
+                            className={`text-[#4A5565] font-medium pb-2 transition-all ${location.pathname === '/about' ? 'border-b-2 border-primary' : ''}`}
                         >
                             About
                         </Link>
-                        <Link
-                            to="/help-support"
-                            className={`text-[#4A5565] font-medium pb-2 transition-all ${location.pathname === '/help-support' ? 'border-b-2 border-[#155DFC]' : ''}`}
-                        >
-                            Help & Support
-                        </Link>
+                        <div className="relative" >
+                            <button
+                                onClick={() => setResourcesOpen((s) => !s)}
+                                className={`text-[#4A5565] font-medium pb-2 flex items-center gap-2`}
+                                aria-expanded={resourcesOpen}
+                                aria-haspopup="true"
+                            >
+                                Resources
+                                <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+
+                            {resourcesOpen && (
+                                <div onMouseLeave={() => setResourcesOpen(false)} className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
+                                    <nav className="flex flex-col">
+                                        <Link to="/tutorials" className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" onClick={() => setResourcesOpen(false)}>How It Works</Link>
+                                        <Link to="/terms-of-use" className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" onClick={() => setResourcesOpen(false)}>Terms of Use</Link>
+                                        <Link to="/privacy-policy" className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" onClick={() => setResourcesOpen(false)}>Privacy Policy</Link>
+                                        <Link
+                                            to="/help-support" className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" onClick={() => setResourcesOpen(false)}>
+                                            Help & Support
+                                        </Link>
+                                    </nav>
+                                </div>
+                            )}
+                        </div>
                     </nav>
 
                     {/* Auth Buttons (Desktop) */}
@@ -118,6 +140,7 @@ const HeaderNav = () => {
                         >
                             Pricing
                         </a>
+
                         <Link
                             to="/about"
                             className="text-black font-medium"
