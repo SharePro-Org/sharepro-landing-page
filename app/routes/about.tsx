@@ -14,39 +14,41 @@ export function meta({ }: Route.MetaArgs) {
 
 export default function About() {
     return (
-        <main className="bg-[#0D0B12] text-white lg:px-0 px-2">
+        <main className="bg-[#F9FAFB] text-[#030229] lg:px-0 px-2">
             {/* Hero Section */}
-            <section className="bg-[#0D0B12]">
+            <section id="hero" className="bg-white">
                 <div className="max-w-3xl mx-auto text-center py-20 px-4">
-                    <button className="bg-transparent text-[#FFFFFF] px-4 py-2 rounded-full text-sm mb-4 border border-white">
+                    <button className="bg-transparent text-[#013BBB] px-4 py-2 rounded-full text-sm mb-4">
                         About Us
                     </button>
-                    <h1 className="text-3xl md:text-4xl font-bold text-white">
-                        Empowering businesses to grow through the power of their customers.                    </h1>
+                    <h1 className="text-3xl md:text-4xl font-bold text-[#030229]">
+                        Empowering businesses to grow through the power of their customers.
+                    </h1>
                 </div>
             </section>
 
 
             {/* Who We Are */}
-            <section className="max-w-7xl bg-[#171717] rounded-lg mx-auto items-center px-4 py-10 mb-20">
-                <div className="lg:w-1/2 text-center mx-auto">
+            <section className="max-w-7xl rounded-lg mx-auto lg:flex items-center px-4 py-10 mb-20">
+                <div className="lg:w-[40%] mx-auto">
                     <h2 className="text-3xl font-semibold mb-4">Who We Are</h2>
-                    <p className="text-[#B7B4C7] mb-8">
+                    <p className="text-gray-600 mb-8">
                         SharePro is a growth-focused platform designed to help businesses
                         build stronger relationships with their customers through referral
                         and loyalty campaigns. We believe your best marketers are the
                         customers who already love your brand.
                     </p>
+                    
                 </div>
 
                 <img
-                    src="/assets/why-us.png"
+                    src="/assets/about.png"
                     alt="Customer using SharePro"
-                    className="rounded-sm lg:h-[500px] object-cover shadow-md w-full"
+                    className="rounded-sm"
                 />
             </section>
 
-            <section className="bg-[#0D0B12] text-white mb-20">
+            <section className=" text-[#030229] mb-20">
                 <div className="max-w-7xl mx-auto text-center">
                     <div className="grid md:grid-cols-2 gap-8">
                         {[
@@ -65,12 +67,12 @@ export default function About() {
                         ].map((item, i) => (
                             <div
                                 key={i}
-                                className="bg-[#1a1820] p-8 rounded-lg border border-[#2C303F] hover:border-[#233E97] transition text-left"
+                                className={`p-8 rounded-lg hover:border-[#233E97] transition text-left ${i === 0 ? 'bg-[#F6F6FF]' : 'bg-[#EEFDF8]'}`}
                             >
                                 <img className="mb-6" src={`/assets/icons/${item.icon}`} alt="" />
                                 {/* <div className="text-3xl font-bold text-[#233E97] mb-4">{item.step}</div> */}
                                 <h3 className="font-bold text-xl mb-3">{item.title}</h3>
-                                <p className="text-gray-400">{item.desc}</p>
+                                <p className="text-gray-600">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -78,7 +80,7 @@ export default function About() {
             </section>
 
             {/* What We Offer */}
-            <section className="max-w-7xl mx-auto bg-[#1a1820] rounded-lg border border-[#19171E] p-10 mb-20">
+            <section className="max-w-7xl mx-auto bg-[#E4F1FF] rounded-lg p-10 mb-20">
                 <h2 className="text-center text-2xl font-semibold mb-10">
                     What We Offer
                 </h2>
@@ -93,7 +95,7 @@ export default function About() {
                     ].map((item, i) => (
                         <div
                             key={i}
-                            className="flex items-center gap-2 border border-white text-sm px-4 py-2 rounded-xl"
+                            className="flex items-center gap-2 border border-[#77B7FC] text-sm px-4 py-2 rounded-xl bg-transparent"
                         >
                             <span className="w-2 h-2 bg-[#233E97] rounded-full" />
                             {item}

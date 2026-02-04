@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* Clash Display Font Family */
 @font-face {
@@ -45,8 +46,14 @@
 
 @import "tailwindcss";
 
-a, p, button{
+a,
+p,
+button {
     font-family: "Public Sans", sans-serif;
+}
+
+body{
+    font-family: "Inter", sans-serif;
 }
 
 @theme {
@@ -108,7 +115,7 @@ a, p, button{
 }
 
 #cta {
-        background: url('/assets/pattern.svg') no-repeat center;
+    background: url('/assets/pattern.svg') no-repeat center;
     background-color: #A16AD4;
 }
 
@@ -117,7 +124,7 @@ a, p, button{
     background-color: #030229;
 }
 
-#hero{
+#hero {
     background: url('/assets/pattern-hero.svg') no-repeat center;
     background-color: #fff;
 }

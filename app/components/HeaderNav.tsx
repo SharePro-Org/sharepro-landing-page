@@ -95,39 +95,39 @@ const HeaderNav = () => {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="md:hidden bg-[#0D0B12] shadow-md border-t border-gray-100">
+                <div className="md:hidden bg-[#F9FAFB] shadow-md border-t border-gray-100">
                     <nav className="flex flex-col space-y-4 px-6 py-4">
                         <Link
                             to="/tutorials"
-                            className="font-medium text-white"
+                            className="font-medium text-black"
                             onClick={() => setMenuOpen(false)}
                         >
                             How It Works
                         </Link>
                         <a
                             href="/#features"
-                            className="text-white font-medium"
+                            className="text-black font-medium"
                             onClick={() => setMenuOpen(false)}
                         >
                             Features
                         </a>
                         <a
                             href="/#pricing"
-                            className="text-white font-medium"
+                            className="text-black font-medium"
                             onClick={() => setMenuOpen(false)}
                         >
                             Pricing
                         </a>
                         <Link
                             to="/about"
-                            className="text-white font-medium"
+                            className="text-black font-medium"
                             onClick={() => setMenuOpen(false)}
                         >
                             About
                         </Link>
                         <Link
                             to="/help-support"
-                            className="text-white font-medium"
+                            className="text-black font-medium"
                             onClick={() => setMenuOpen(false)}
                         >
                             Help & Support
@@ -136,7 +136,7 @@ const HeaderNav = () => {
                         <hr className="border-gray-200" />
 
                         <Link to="https://app.mysharepro.com/auth/sign-in" onClick={() => setMenuOpen(false)}>
-                            <button className="w-full text-left text-white font-medium">
+                            <button className="w-full text-left text-black font-medium">
                                 Login
                             </button>
                         </Link>
