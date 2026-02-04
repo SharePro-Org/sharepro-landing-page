@@ -13,12 +13,12 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
     };
 
     return (
-        <div className="w-full max-w-2xl mx-auto border border-[#3D3D3D] rounded-lg">
+        <div className="w-full max-w-2xl mx-auto border border-gray-200 rounded-lg bg-white">
             {items.length > 0 ? items.map((item, index) => (
                 <div key={index} className="">
                     <button
                         onClick={() => toggleAccordion(index)}
-                        className="w-full flex justify-between items-center p-4 text-left font-medium text-white focus:outline-none"
+                        className="w-full flex justify-between items-center p-4 text-left font-medium text-gray-800 focus:outline-none"
                     >
                         <span className="capitalize">{item.question}</span>
                         <span
@@ -29,10 +29,10 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
                         </span>
                     </button>
                     <div
-                        className={`overflow-hidden transition-all duration-300 ${activeIndex === index ? "max-h-40 p-4" : "max-h-0 p-0"
+                        className={`overflow-hidden transition-all duration-300 ${activeIndex === index ? "max-h-40 p-4 bg-gray-50 border-t border-gray-100" : "max-h-0 p-0"
                             }`}
                     >
-                        <div className="text-gray-600">{item.answer}</div>
+                        <div className="text-gray-700">{item.answer}</div>
                     </div>
                 </div>
             )) : <p className="p-4">No FAQs available at the moment.</p>}

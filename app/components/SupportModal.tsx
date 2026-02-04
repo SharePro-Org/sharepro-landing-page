@@ -81,12 +81,12 @@ const SupportRequestModal: React.FC<SupportRequestModalProps> = ({
             onClick={onClose}
         >
             <div
-                className="bg-[#0D0B12] text-white rounded-lg shadow-lg w-full max-w-lg p-6 relative animate-fadeIn"
+                className="bg-white text-[#030229] rounded-lg shadow-lg w-full max-w-lg p-6 relative animate-fadeIn border border-gray-200"
                 onClick={(e) => e.stopPropagation()}
             >
                 <button
                     onClick={onClose}
-                    className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+                    className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
                 >
                     ✕
                 </button>
@@ -234,7 +234,7 @@ const SupportRequestModal: React.FC<SupportRequestModalProps> = ({
                         <button
                             type="submit"
                             disabled={submitLoading}
-                            className="px-6 py-2 bg-primary text-white rounded-md text-sm hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                            className="px-6 py-2 bg-primary text-white rounded-md text-sm hover:bg-[#1a4bd9] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                         >
                             {submitLoading && (
                                 <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>

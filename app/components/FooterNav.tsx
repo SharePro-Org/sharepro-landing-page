@@ -4,7 +4,7 @@ import { Facebook, Twitter, Instagram } from "lucide-react";
 
 const FooterNav = () => {
     return (
-        <footer className="bg-[#0D0B12] py-12 px-4 sm:px-6 lg:px-8 text-white">
+        <footer className="bg-[#101828] py-12 px-4 sm:px-6 lg:px-8 text-white">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
                     {/* Logo and Tagline */}

@@ -51,7 +51,7 @@ a, p, button{
 
 @theme {
     /* Colors */
-    --color-primary: #155DFC;
+    --color-primary: #233E97;
     --color-secondary: #A16AD4;
     --color-accent-1: #5977D9;
     --color-accent-2: #539EF0;
@@ -108,11 +108,16 @@ a, p, button{
 }
 
 #cta {
-    background: url('/assets/pattern.svg') no-repeat center;
+        background: url('/assets/pattern.svg') no-repeat center;
     background-color: #A16AD4;
 }
 
 #serve {
     background: url('/assets/service-pattern.svg') no-repeat center;
     background-color: #030229;
+}
+
+#hero{
+    background: url('/assets/pattern-hero.svg') no-repeat center;
+    background-color: #fff;
 }
