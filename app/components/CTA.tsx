@@ -9,7 +9,7 @@ const CTA = () => {
                     <div>
                         <h1 className='lg:text-5xl text-3xl font-bold'>Start <br /> Rewarding. <br /> Start Growing.</h1>
                         <p className='my-3'>Join thousands of businesses using SharePro to build stronger customer relationships and drive sustainable growth.</p>
-                        <button className='p-3 bg-primary text-white rounded-md flex items-center gap-2'>
+                        <button className='p-3 bg-primary text-white rounded-md flex items-center gap-2 btn-animate'>
                             Get Started Now
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 12H6.75m6 6 6-6-6-6" />

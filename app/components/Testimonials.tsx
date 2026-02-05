@@ -60,7 +60,7 @@ export default function Testimonials() {
                     {testimonials.map((t) => (
                         <SwiperSlide key={t.id}>
                             <div className="px-4">
-                                <div className="bg-white p-8 rounded-lg border border-[#E2E8F0] h-full flex flex-col justify-between">
+                                <div className="bg-white p-8 rounded-lg border border-[#E2E8F0] h-full flex flex-col justify-between card-scale">
                                     <blockquote className="text-gray-800 text-lg">“{t.quote}”</blockquote>
                                     <div className="mt-6 flex items-center gap-3">
                                         <div className="text-left">

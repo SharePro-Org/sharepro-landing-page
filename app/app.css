@@ -10,11 +10,12 @@ button {
     font-family: "Public Sans", sans-serif;
 }
 
-body{
+body {
     font-family: "Inter", sans-serif !important;
+    overflow-x: hidden;
 }
 
-@theme {
+:root {
     /* Colors */
     --color-primary: #233E97;
     --color-secondary: #A16AD4;
@@ -85,4 +86,35 @@ body{
 #hero {
     background: url('/assets/pattern-hero.svg') no-repeat center;
     background-color: #fff;
+}
+
+/* Interaction utilities */
+.btn-animate {
+    transition: transform 200ms cubic-bezier(.2, .9, .2, 1), box-shadow 200ms cubic-bezier(.2, .9, .2, 1);
+    transform: translateZ(0);
+}
+
+.btn-animate:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 24px rgba(35, 62, 151, 0.12);
+}
+
+/* Fallback utilities (in case Tailwind doesn't generate bg-primary/text-primary) */
+.bg-primary {
+    background-color: var(--color-primary) !important;
+}
+
+.text-primary {
+    color: var(--color-primary) !important;
+}
+
+.card-scale {
+    transition: transform 220ms cubic-bezier(.2, .9, .2, 1), box-shadow 220ms cubic-bezier(.2, .9, .2, 1);
+    transform-origin: center center;
+    transform: translateZ(0);
+}
+
+.card-scale:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 14px 40px rgba(16, 24, 40, 0.08);
 }

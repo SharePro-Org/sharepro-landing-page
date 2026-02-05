@@ -37,14 +37,14 @@ export default function Home() {
             Turn your customers into brand advocates with our powerful referral and loyalty program          </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <Link to="https://app.mysharepro.com/auth/sign-up">
-              <button className="bg-primary px-8 py-3 text-white rounded-md font-medium transition flex items-center gap-2">
+              <button className="bg-primary px-8 py-3 text-white rounded-md font-medium transition flex items-center gap-2 btn-animate">
                 Start Free Trial
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 12H6.75m6 6 6-6-6-6" />
                 </svg>
               </button>
             </Link>
-            <button className="border border-[#2C303F] px-8 py-3 text-primary rounded-md font-medium transition">
+            <button className="border border-[#2C303F] px-8 py-3 text-primary rounded-md font-medium transition btn-animate">
               Learn More
             </button>
           </div>
@@ -82,7 +82,7 @@ export default function Home() {
                 img: "/assets/steps/why-3.png"
               }
             ].map((item, i) => (
-              <div key={i} className={`bg-white lg:my-0 my-3 rounded-lg p-6 border border-[#FFFFFF0D] transition ${i === 2 ? 'col-span-2 lg:grid grid-cols-2' : ''}`}>
+              <div key={i} className={`bg-white lg:my-0 my-3 rounded-lg p-6 border border-[#FFFFFF0D] transition card-scale ${i === 2 ? 'col-span-2 lg:grid grid-cols-2' : ''}`}>
                 <div>
                   <div className="flex gap-4 mb-2">
                     <img className="h-auto" src={`/assets/icons/icon-${i + 1}.png`} alt="" />
@@ -118,7 +118,7 @@ export default function Home() {
 
       {/* Earn Rewards Section */}
       <section className="bg-[#F5F5FF] pb-10" data-aos="fade-left" data-aos-delay="120">
-        <img src="/assets/Image-bags.png" alt="" />
+        <img src="/assets/Image-bags.png" className="w-screen object-cover" alt="" />
         <div className="max-w-7xl mx-auto my-20 px-4">
           <div className="text-center mb-16">
 
@@ -147,7 +147,7 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-[#fff] p-8 rounded-lg transition text-left"
+                className="bg-[#fff] p-8 rounded-lg transition text-left card-scale"
               >
                 <img className="mb-6" src={`/assets/icons/${item.icon}`} alt="" />
                 {/* <div className="text-3xl font-bold text-[#233E97] mb-4">{item.step}</div> */}
@@ -280,7 +280,7 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-[#fff] p-8 rounded-lg transition text-left"
+                className="bg-[#fff] p-8 rounded-lg transition text-left card-scale"
               >
                 <img className="mb-2" src={`/assets/icons/${item.icon}`} alt="" />
                 {/* <div className="text-3xl font-bold text-[#233E97] mb-4">{item.step}</div> */}
@@ -325,7 +325,7 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-[#fff] p-8 rounded-lg transition text-left"
+                className="bg-[#fff] p-8 rounded-lg transition text-left card-scale"
               >
                 <img className="mb-6" src={`/assets/icons/${item.icon}`} alt="" />
                 <div className="text-3xl font-bold mb-2">{item.stat}</div>
@@ -361,7 +361,7 @@ export default function Home() {
               plansData.plans.map((plan) => (
                 <div
                   key={plan.id}
-                  className={`rounded-lg p-6 transition flex flex-col h-full ${plan.isPopular ? "bg-primary relative" : "bg-white"}`}
+                  className={`rounded-lg p-6 transition flex flex-col h-full card-scale ${plan.isPopular ? "bg-primary relative" : "bg-white"}`}
                 >
                   {plan.isPopular && (
                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -415,7 +415,7 @@ export default function Home() {
 
                   </ul>
                   <Link to="https://app.mysharepro.com/auth/sign-up">
-                    <button className={`w-full py-2 mt-4 rounded-sm font-medium transition ${plan.isPopular ? "bg-white text-[#161616] hover:bg-gray-100" : "bg-primary text-white hover:bg-blue-700"}`}>
+                    <button className={`w-full py-2 mt-4 rounded-sm font-medium transition btn-animate ${plan.isPopular ? "bg-white text-[#161616] hover:bg-gray-100" : "bg-primary text-white hover:bg-blue-700"}`}>
                       Get Started
                     </button>
                   </Link>
