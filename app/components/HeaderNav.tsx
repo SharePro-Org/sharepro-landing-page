@@ -72,7 +72,7 @@ const HeaderNav = () => {
 
                     {/* Auth Buttons (Desktop) */}
                     <div className="hidden md:flex items-center space-x-4">
-                        <Link to="https://app.mysharepro.con/auth/sign-in">
+                        <Link to="https://app.mysharepro.com/auth/sign-in">
                             <button className="text-[#4A5565] font-medium">
                                 Login
                             </button>
