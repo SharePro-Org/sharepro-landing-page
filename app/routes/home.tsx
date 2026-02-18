@@ -44,9 +44,9 @@ export default function Home() {
                 </svg>
               </button>
             </Link>
-            <button className="border border-[#2C303F] px-8 py-3 text-primary rounded-md font-medium transition btn-animate">
-              Learn More
-            </button>
+            <Link to="/tutorials" className="border border-[#2C303F] px-8 py-3 text-primary rounded-md font-medium transition btn-animate">
+              Learn how it works
+            </Link>
           </div>
         </div>
         {/* <img
@@ -160,7 +160,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-white py-20" data-aos="zoom-in" data-aos-delay="80">
+      <section id="how-it-works" className="bg-white py-20" data-aos="zoom-in" data-aos-delay="80">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">How It Works</h2>
